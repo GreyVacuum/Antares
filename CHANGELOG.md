@@ -91,6 +91,10 @@ Unreleased
   that belong to the infantry class; this restriction has been lifted.
   (Noble_Fish, [Phobos #2316](https://github.com/Phobos-developers/Phobos/pull/2316))
 
++ **PreventScatter** logic could previously only be defined on a per-warhead
+  basis; now `Warhead.PreventScatter` has been added as a global default.
+  (Noble_Fish, [Phobos #2340](https://github.com/Phobos-developers/Phobos/pull/2340))
+
 Ares 3.0p1 (21.352.1218)
 ------------------------
 

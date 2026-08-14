@@ -91,7 +91,7 @@ public:
 
 		Valueable<bool> Malicious;
 
-		Valueable<bool> PreventScatter;
+		Nullable<bool> PreventScatter;
 
 		Nullable<bool> BridgeAbsoluteDestroyer;
 
@@ -162,7 +162,7 @@ public:
 			KillDriver_Owner(OwnerHouseKind::Special),
 			KillDriver_RemoveVeterancy(false),
 			Malicious(true),
-			PreventScatter(false),
+			PreventScatter(),
 			BridgeAbsoluteDestroyer(),
 			CellSpread_MaxAffect(-1),
 			DamageAirThreshold(0),

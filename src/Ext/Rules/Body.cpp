@@ -151,6 +151,8 @@ void RulesExt::ExtData::LoadBeforeTypeData(RulesClass *pThis, CCINIClass *pINI) 
 	pData->AIFriendlyDistance.Read(exINI, sectionGeneral, "AIFriendlyDistance");
 
 	pData->EMPAIRecoverMission.Read(exINI, sectionCombatDamage, "EMPAIRecoverMission");
+
+	pData->Warhead_PreventScatter.Read(exINI, sectionCombatDamage, "Warhead.PreventScatter");
 }
 
 // this runs between the before and after type data loading methods for rules ini
@@ -302,7 +304,8 @@ void RulesExt::ExtData::Serialize(T& Stm) {
 		.Process(this->ChronoInfantryCrush)
 		.Process(this->StartInMultiplayerUnitCost)
 		.Process(this->AIFriendlyDistance)
-		.Process(this->EMPAIRecoverMission);
+		.Process(this->EMPAIRecoverMission)
+		.Process(this->Warhead_PreventScatter);
 }
 
 void RulesExt::ExtData::LoadFromStream(AresStreamReader &Stm) {

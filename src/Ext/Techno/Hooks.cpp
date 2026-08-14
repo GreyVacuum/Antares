@@ -1780,7 +1780,7 @@ DEFINE_HOOK(0x702CFE, TechnoClass_ReceiveDamage_PreventScatter, 0x6)
 	auto pExt = WarheadTypeExt::ExtMap.Find(pWarhead);
 
 	// only allow to scatter if not prevented
-	if(!pExt->PreventScatter) {
+	if(!pExt->PreventScatter.Get(RulesExt::Global()->Warhead_PreventScatter)) {
 		pThis->Scatter(CoordStruct::Empty, true, false);
 	}
 

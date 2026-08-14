@@ -127,6 +127,8 @@ public:
 		Nullable<int> AIFriendlyDistance;
 		Nullable<Mission> EMPAIRecoverMission;
 
+		Valueable<bool> Warhead_PreventScatter;
+
 		ExtData(RulesClass* OwnerObject) : Extension<RulesClass, ExtData>(OwnerObject),
 			ElectricDeath(nullptr),
 			EngineerDamage(0.0),
@@ -178,7 +180,8 @@ public:
 			ChronoInfantryCrush(true),
 			StartInMultiplayerUnitCost(),
 			AIFriendlyDistance(),
-			EMPAIRecoverMission()
+			EMPAIRecoverMission(),
+			Warhead_PreventScatter(false)
 		{
 			MultiEngineer[0] = false; // Skirmish
 			MultiEngineer[1] = false; // LAN
