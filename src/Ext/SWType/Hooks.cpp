@@ -54,10 +54,12 @@ DEFINE_HOOK(0x6AAEDF, SidebarClass_ProcessCameoClick_SuperWeapons, 0x6) {
 	SuperClass* pSuper = HouseClass::CurrentPlayer->Supers.GetItem(idxSW);
 
 	if(SWTypeExt::ExtData* pData = SWTypeExt::ExtMap.Find(pSuper->Type)) {
-		// if this SW is only auto-firable, discard any clicks.
-		// if AutoFire is off, the sw would not be firable at all,
-		// thus we ignore the setting in that case.
-		bool manual = !pData->SW_ManualFire && pData->SW_AutoFire;
+		// NOTE: 'manual' is a misleading name inherited from Ares - it is true
+		// when clicking this SW's cameo is discarded (it cannot be fired
+		// manually), not when it can. It is decoupled from SW.AutoFire: a
+		// plain 'SW.ManualFire=false' disables clicking, regardless of how the
+		// SW is launched (auto-fire, warheads or any other mechanism).
+		bool manual = !pData->SW_ManualFire;
 		bool unstoppable = pSuper->Type->UseChargeDrain && pSuper->ChargeDrainState == ChargeDrainState::Draining
 			&& pData->SW_Unstoppable;
 

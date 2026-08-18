@@ -184,9 +184,9 @@ DEFINE_HOOK(0x50B1D0, HouseClass_UpdateSuperWeaponsUnavailable, 0x6)
 					pSuper->Grant(false, pThis->IsCurrentPlayer(), !status.PowerSourced);
 
 					if(pThis->IsCurrentPlayer()) {
-						// hide the cameo (only if this is an auto-firing SW)
+						// hide the cameo if the SW is not supposed to show one
 						auto pData = SWTypeExt::ExtMap.Find(pSuper->Type);
-						if(pData->SW_ShowCameo || !pData->SW_AutoFire) {
+						if(pData->SW_ShowCameo) {
 							MouseClass::Instance.AddCameo(AbstractType::Special, index);
 							int idxTab = SidebarClass::GetObjectTabIdx(SuperClass::AbsID, index, 0);
 							MouseClass::Instance.RepaintSidebar(idxTab);

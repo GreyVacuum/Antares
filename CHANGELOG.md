@@ -95,6 +95,10 @@ Unreleased
   basis; now `Warhead.PreventScatter` has been added as a global default.
   (Noble_Fish, [Phobos #2340](https://github.com/Phobos-developers/Phobos/pull/2340))
 
++ **SW.AutoFire** no longer acts as a prerequisite for `SW.ShowCameo` and `SW.ManualFire`;
+  these two flags can now function independently of `SW.AutoFire`.
+  (Noble_Fish, [Phobos #2335](https://github.com/Phobos-developers/Phobos/pull/2335))
+
 Ares 3.0p1 (21.352.1218)
 ------------------------
 
